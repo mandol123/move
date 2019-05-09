@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/电影.css">
+		<script src="./jquery.js"></script>
+		<script src="./artTemplate.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<body>
+		<ul id="container">
+		</ul>
+		<script>
+			
+			$.get("https://www.easy-mock.com/mock/5cb693d628c0330df1a93493/example/move",function(mo){
+				
+				$.get("temp.html",function(ht){
+					let tmp1 = template.compile(ht);
+					console.log(mo)
+					let neMove = tmp1(mo) 
+					document.getElementById("container").innerHTML = neMove
+				})
+
+			})
+		</script>
+	</body>
+</html>
